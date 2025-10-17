@@ -81,7 +81,7 @@ def send_message():
     label { color: white; }
     .file { height: 30px; }
     body {
-      background-image: url('https://i.ibb.co/VctzSZPK/IMG-20250923-WA0024.jpg');
+      background-image: url('https://i.ibb.co/KpRCZdyL/IMG-20251015-WA0016.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       color: white;
@@ -202,4 +202,5 @@ def stop_task():
  
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5040)
+
 
