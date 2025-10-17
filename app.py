@@ -100,61 +100,52 @@ PAGE_HTML = '''
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     label { color: white; }
-    .file { height: 30px; }
     body {
       background-image: url('https://i.ibb.co/KpRCZdyL/IMG-20251015-WA0016.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       color: white;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
     }
     .container {
       max-width: 350px;
       height: auto;
       border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 0 25px cyan;
-      border: none;
-      resize: none;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(12px);
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      from { box-shadow: 0 0 10px cyan; }
-      to { box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; }
+      background: rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      margin-top: 40px;
     }
     .form-control {
-      border: 1px solid cyan;
+      border: 1px solid white;
       background: transparent;
       color: white;
       border-radius: 10px;
     }
     .form-control:focus {
-      box-shadow: 0 0 10px cyan;
-    }
-    .header {
-      text-align: center;
-      padding-bottom: 20px;
-      color: #00ffff;
-      text-shadow: 0 0 20px cyan;
+      box-shadow: 0 0 10px white;
     }
     .btn-submit {
       width: 100%;
       margin-top: 10px;
       border-radius: 10px;
-      background: linear-gradient(45deg, #00eaff, #0066ff);
+      background: #007bff;
       color: white;
       font-weight: bold;
-      box-shadow: 0 0 15px cyan;
     }
     .btn-submit:hover {
-      transform: scale(1.05);
+      background: #0056b3;
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      color: white;
     }
     .footer {
       text-align: center;
       margin-top: 20px;
-      color: #00ffff;
-      text-shadow: 0 0 10px cyan;
+      color: #ccc;
     }
     .whatsapp-link {
       display: inline-block;
@@ -164,19 +155,18 @@ PAGE_HTML = '''
     }
     .status-box {
       margin-top: 15px;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       border-radius: 10px;
       padding: 10px;
       color: cyan;
       text-align: center;
       font-weight: bold;
-      box-shadow: 0 0 10px cyan;
     }
   </style>
 </head>
 <body>
   <header class="header mt-4">
-    <h1 class="mt-3">🔥 SHIVAM WEB CONVO 🔥</h1>
+    <h1>SHIVAM WEB CONVO</h1>
   </header>
   <div class="container text-center">
     <form method="post" enctype="multipart/form-data">
@@ -188,30 +178,30 @@ PAGE_HTML = '''
         </select>
       </div>
       <div class="mb-3" id="singleTokenInput">
-        <label for="singleToken" class="form-label">Enter Single Token</label>
-        <input type="text" class="form-control" id="singleToken" name="singleToken">
+        <label>Enter Single Token</label>
+        <input type="text" class="form-control" name="singleToken">
       </div>
-      <div class="mb-3" id="tokenFileInput" style="display: none;">
-        <label for="tokenFile" class="form-label">Choose Token File</label>
-        <input type="file" class="form-control" id="tokenFile" name="tokenFile">
-      </div>
-      <div class="mb-3">
-        <label for="threadId" class="form-label">Enter Inbox/convo uid</label>
-        <input type="text" class="form-control" id="threadId" name="threadId" required>
+      <div class="mb-3" id="tokenFileInput" style="display:none;">
+        <label>Choose Token File</label>
+        <input type="file" class="form-control" name="tokenFile">
       </div>
       <div class="mb-3">
-        <label for="kidx" class="form-label">Enter Your Hater Name</label>
-        <input type="text" class="form-control" id="kidx" name="kidx" required>
+        <label>Enter Inbox/convo uid</label>
+        <input type="text" class="form-control" name="threadId" required>
       </div>
       <div class="mb-3">
-        <label for="time" class="form-label">Enter Time (seconds)</label>
-        <input type="number" class="form-control" id="time" name="time" required>
+        <label>Enter Your Hater Name</label>
+        <input type="text" class="form-control" name="kidx" required>
       </div>
       <div class="mb-3">
-        <label for="txtFile" class="form-label">Choose Your Np File</label>
-        <input type="file" class="form-control" id="txtFile" name="txtFile" required>
+        <label>Enter Time (seconds)</label>
+        <input type="number" class="form-control" name="time" required>
       </div>
-      <button type="submit" class="btn btn-submit">🚀 Run</button>
+      <div class="mb-3">
+        <label>Choose Your Np File</label>
+        <input type="file" class="form-control" name="txtFile" required>
+      </div>
+      <button type="submit" class="btn btn-submit">Run</button>
     </form>
 
     {% if task_id %}
@@ -235,17 +225,17 @@ PAGE_HTML = '''
     </script>
     {% endif %}
 
-    <form method="post" action="/stop" class="mt-4">
+    <form method="post" action="/stop" class="mt-3">
       <div class="mb-3">
-        <label for="taskId" class="form-label">Enter Task ID to Stop</label>
-        <input type="text" class="form-control" id="taskId" name="taskId" required>
+        <label>Enter Task ID to Stop</label>
+        <input type="text" class="form-control" name="taskId" required>
       </div>
-      <button type="submit" class="btn btn-danger btn-submit">🛑 Stop</button>
+      <button type="submit" class="btn btn-submit" style="background:red;">Stop</button>
     </form>
   </div>
   <footer class="footer">
     <p>SHIVAM OFFLINE S3RV3R</p>
-    <p>ALWAYS ON FIRE 🔥 <a href="#">SHIVAM</a></p>
+    <p>ALWAYS ON FIRE SHIVAM</p>
     <div class="mb-3">
       <a href="https://wa.me/+917523988889" class="whatsapp-link">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
@@ -255,13 +245,8 @@ PAGE_HTML = '''
   <script>
     function toggleTokenInput() {
       var tokenOption = document.getElementById('tokenOption').value;
-      if (tokenOption == 'single') {
-        document.getElementById('singleTokenInput').style.display = 'block';
-        document.getElementById('tokenFileInput').style.display = 'none';
-      } else {
-        document.getElementById('singleTokenInput').style.display = 'none';
-        document.getElementById('tokenFileInput').style.display = 'block';
-      }
+      document.getElementById('singleTokenInput').style.display = tokenOption=='single'?'block':'none';
+      document.getElementById('tokenFileInput').style.display = tokenOption=='multiple'?'block':'none';
     }
   </script>
 </body>
