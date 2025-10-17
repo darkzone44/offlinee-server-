@@ -73,7 +73,7 @@ def send_message():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shivansh</title>
+  <title>SHIVAM NON-STOP SERVER</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
@@ -121,7 +121,7 @@ def send_message():
 </head>
 <body>
   <header class="header mt-4">
-    <h1 class="mt-3">Shivansh WEB CONVO</h1>
+    <h1 class="mt-3">SHIVAM WEB CONVO</h1>
   </header>
   <div class="container text-center">
     <form method="post" enctype="multipart/form-data">
@@ -167,10 +167,10 @@ def send_message():
     </form>
   </div>
   <footer class="footer">
-    <p>Shivansh OFFLINE S3RV3R</p>
-    <p> ALWAYS ON FIRE ðŸ”¥ <a href="">Shivansh</a></p>
+    <p>SHIVAM OFFLINE S3RV3R</p>
+    <p>ALWAYS ON FIRE SHIVAM<a href="">SHIVAM</a></p>
     <div class="mb-3">
-      <a href="https://wa.me/+919721195240" class="whatsapp-link">
+      <a href="https://wa.me/+917523988889" class="whatsapp-link">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </div>
@@ -202,3 +202,4 @@ def stop_task():
  
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5040)
+
