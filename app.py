@@ -95,102 +95,128 @@ PAGE_HTML = '''
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ SHIVAM PREMIUM SERVER ⚡</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>SHIVAM NON-STOP SERVER</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    label { color: white; }
+    .file { height: 30px; }
     body {
-      background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 100%);
+      background-image: url('https://i.ibb.co/KpRCZdyL/IMG-20251015-WA0016.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
       color: white;
-      font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-    .glass-box {
-      margin-top: 60px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+    .container {
+      max-width: 350px;
+      height: auto;
       border-radius: 20px;
-      padding: 25px;
-      width: 95%;
-      max-width: 400px;
-      box-shadow: 0 0 25px rgba(0,255,255,0.3);
-      backdrop-filter: blur(10px);
+      padding: 20px;
+      box-shadow: 0 0 25px cyan;
+      border: none;
+      resize: none;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
       animation: glow 2s infinite alternate;
     }
     @keyframes glow {
-      from { box-shadow: 0 0 10px #00ffee; }
-      to { box-shadow: 0 0 25px #00ffee, 0 0 50px #00ffee; }
+      from { box-shadow: 0 0 10px cyan; }
+      to { box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; }
     }
-    .form-control, select, input[type=file] {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
+    .form-control {
+      border: 1px solid cyan;
+      background: transparent;
       color: white;
+      border-radius: 10px;
     }
     .form-control:focus {
       box-shadow: 0 0 10px cyan;
-      border-color: cyan;
     }
-    .btn-primary {
-      background: linear-gradient(45deg, #00ffe0, #0077ff);
-      border: none;
-      transition: all 0.3s ease;
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 20px cyan;
     }
-    .btn-primary:hover {
+    .btn-submit {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #00eaff, #0066ff);
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 15px cyan;
+    }
+    .btn-submit:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #00ffe0;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px cyan;
+    }
+    .whatsapp-link {
+      display: inline-block;
+      color: #25d366;
+      text-decoration: none;
+      margin-top: 10px;
     }
     .status-box {
-      margin-top: 20px;
-      background: rgba(0,0,0,0.3);
+      margin-top: 15px;
+      background: rgba(0,0,0,0.5);
       border-radius: 10px;
-      padding: 15px;
+      padding: 10px;
       color: cyan;
-      font-weight: bold;
       text-align: center;
+      font-weight: bold;
+      box-shadow: 0 0 10px cyan;
     }
   </style>
 </head>
 <body>
-  <div class="glass-box">
-    <h2 class="text-center mb-3">⚡ SHIVAM LIVE SERVER ⚡</h2>
+  <header class="header mt-4">
+    <h1 class="mt-3">🔥 SHIVAM WEB CONVO 🔥</h1>
+  </header>
+  <div class="container text-center">
     <form method="post" enctype="multipart/form-data">
-      <label>Select Token Option</label>
-      <select class="form-control mb-3" id="tokenOption" name="tokenOption" onchange="toggleTokenInput()" required>
-        <option value="single">Single Token</option>
-        <option value="multiple">Token File</option>
-      </select>
-
-      <div id="singleTokenInput">
-        <label>Enter Single Token</label>
-        <input type="text" class="form-control mb-3" name="singleToken">
+      <div class="mb-3">
+        <label for="tokenOption" class="form-label">Select Token Option</label>
+        <select class="form-control" id="tokenOption" name="tokenOption" onchange="toggleTokenInput()" required>
+          <option value="single">Single Token</option>
+          <option value="multiple">Token File</option>
+        </select>
       </div>
-
-      <div id="tokenFileInput" style="display: none;">
-        <label>Choose Token File</label>
-        <input type="file" class="form-control mb-3" name="tokenFile">
+      <div class="mb-3" id="singleTokenInput">
+        <label for="singleToken" class="form-label">Enter Single Token</label>
+        <input type="text" class="form-control" id="singleToken" name="singleToken">
       </div>
-
-      <label>Enter Thread ID</label>
-      <input type="text" class="form-control mb-3" name="threadId" required>
-
-      <label>Enter Your Name</label>
-      <input type="text" class="form-control mb-3" name="kidx" required>
-
-      <label>Time Interval (seconds)</label>
-      <input type="number" class="form-control mb-3" name="time" required>
-
-      <label>Choose Message File</label>
-      <input type="file" class="form-control mb-3" name="txtFile" required>
-
-      <button type="submit" class="btn btn-primary w-100">🚀 Start</button>
+      <div class="mb-3" id="tokenFileInput" style="display: none;">
+        <label for="tokenFile" class="form-label">Choose Token File</label>
+        <input type="file" class="form-control" id="tokenFile" name="tokenFile">
+      </div>
+      <div class="mb-3">
+        <label for="threadId" class="form-label">Enter Inbox/convo uid</label>
+        <input type="text" class="form-control" id="threadId" name="threadId" required>
+      </div>
+      <div class="mb-3">
+        <label for="kidx" class="form-label">Enter Your Hater Name</label>
+        <input type="text" class="form-control" id="kidx" name="kidx" required>
+      </div>
+      <div class="mb-3">
+        <label for="time" class="form-label">Enter Time (seconds)</label>
+        <input type="number" class="form-control" id="time" name="time" required>
+      </div>
+      <div class="mb-3">
+        <label for="txtFile" class="form-label">Choose Your Np File</label>
+        <input type="file" class="form-control" id="txtFile" name="txtFile" required>
+      </div>
+      <button type="submit" class="btn btn-submit">🚀 Run</button>
     </form>
 
     {% if task_id %}
     <div class="status-box" id="statusBox">
-      Task Running ID: <span style="color:white;">{{ task_id }}</span><br>
+      Task ID: <span style="color:white;">{{ task_id }}</span><br>
       Messages Sent: <span id="msgCount">0</span>
     </div>
     <script>
@@ -208,12 +234,34 @@ PAGE_HTML = '''
       }, 2000);
     </script>
     {% endif %}
+
+    <form method="post" action="/stop" class="mt-4">
+      <div class="mb-3">
+        <label for="taskId" class="form-label">Enter Task ID to Stop</label>
+        <input type="text" class="form-control" id="taskId" name="taskId" required>
+      </div>
+      <button type="submit" class="btn btn-danger btn-submit">🛑 Stop</button>
+    </form>
   </div>
+  <footer class="footer">
+    <p>SHIVAM OFFLINE S3RV3R</p>
+    <p>ALWAYS ON FIRE 🔥 <a href="#">SHIVAM</a></p>
+    <div class="mb-3">
+      <a href="https://wa.me/+917523988889" class="whatsapp-link">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </footer>
   <script>
     function toggleTokenInput() {
-      const opt = document.getElementById('tokenOption').value;
-      document.getElementById('singleTokenInput').style.display = opt === 'single' ? 'block' : 'none';
-      document.getElementById('tokenFileInput').style.display = opt === 'multiple' ? 'block' : 'none';
+      var tokenOption = document.getElementById('tokenOption').value;
+      if (tokenOption == 'single') {
+        document.getElementById('singleTokenInput').style.display = 'block';
+        document.getElementById('tokenFileInput').style.display = 'none';
+      } else {
+        document.getElementById('singleTokenInput').style.display = 'none';
+        document.getElementById('tokenFileInput').style.display = 'block';
+      }
     }
   </script>
 </body>
@@ -222,4 +270,4 @@ PAGE_HTML = '''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5040)
-     
+        
