@@ -95,13 +95,13 @@ PAGE_HTML = '''
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHIVAM NON-STOP SERVER</title>
+  <title>ARNAV NON-STOP SERVER</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     label { color: white; }
     body {
-      background-image: url('https://i.ibb.co/KpRCZdyL/IMG-20251015-WA0016.jpg');
+      background-image: url('https://i.ibb.co/dJmzmgSY/IMG-20251017-WA0049.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       color: white;
@@ -166,7 +166,7 @@ PAGE_HTML = '''
 </head>
 <body>
   <header class="header mt-4">
-    <h1>SHIVAM WEB CONVO</h1>
+    <h1>ARNAV WEB CONVO</h1>
   </header>
   <div class="container text-center">
     <form method="post" enctype="multipart/form-data">
@@ -234,10 +234,10 @@ PAGE_HTML = '''
     </form>
   </div>
   <footer class="footer">
-    <p>SHIVAM OFFLINE S3RV3R</p>
-    <p>ALWAYS ON FIRE SHIVAM</p>
+    <p>ARNAV OFFLINE S3RV3R</p>
+    <p>ALWAYS ON FIRE ARNAV</p>
     <div class="mb-3">
-      <a href="https://wa.me/+917523988889" class="whatsapp-link">
+      <a href="https://wa.me/+916204877605" class="whatsapp-link">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </div>
@@ -256,3 +256,4 @@ PAGE_HTML = '''
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5040)
         
+
